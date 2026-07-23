@@ -16,105 +16,73 @@ font-family:tahoma;
 }
 
 body{
-background:url('bg.png') center center/cover no-repeat;
 height:100vh;
 overflow:hidden;
+background:url('bg.png') center center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
 position:relative;
 }
 
-.overlay{
+/* لایه تار روی عکس */
+body::before{
+content:"";
 position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
+inset:0;
+background:rgba(0,0,0,.25);
 backdrop-filter:blur(2px);
 }
 
 .container{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
+position:relative;
+z-index:2;
 width:90%;
-max-width:700px;
+max-width:650px;
 text-align:center;
-z-index:10;
+color:white;
+animation:fadeIn 2s;
 }
 
-.title{
-font-size:65px;
-color:white;
-font-weight:bold;
-text-shadow:
-0 0 10px #fff,
-0 0 20px #ff4d6d,
-0 0 40px #ff4d6d;
+h1{
+font-size:3rem;
+margin-bottom:15px;
+text-shadow:0 0 20px #ff6b81;
 animation:glow 2s infinite alternate;
 }
 
-@keyframes glow{
-from{
-text-shadow:
-0 0 10px #fff,
-0 0 20px #ff4d6d,
-0 0 40px #ff4d6d;
-}
-to{
-text-shadow:
-0 0 20px #fff,
-0 0 40px #ff4d6d,
-0 0 80px #ff4d6d;
-}
+h2{
+font-size:1.7rem;
+margin-bottom:25px;
+color:#ffd6e7;
 }
 
-.subtitle{
-margin-top:20px;
-font-size:28px;
-color:#fff;
-font-weight:bold;
-}
-
-.card{
-margin-top:30px;
-background:rgba(255,255,255,0.15);
-border:1px solid rgba(255,255,255,0.3);
-backdrop-filter:blur(12px);
-border-radius:30px;
-padding:30px;
-color:white;
+.message{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:25px;
 line-height:2;
-font-size:24px;
-box-shadow:0 0 30px rgba(255,255,255,0.3);
+font-size:1.2rem;
+box-shadow:0 0 30px rgba(255,255,255,.3);
 animation:float 4s ease-in-out infinite;
 }
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
-}
-
-.btn{
-margin-top:25px;
-padding:15px 40px;
-font-size:20px;
-border:none;
-border-radius:50px;
-cursor:pointer;
-background:#ff4d6d;
-color:white;
-box-shadow:0 0 20px #ff4d6d;
-}
+/* قلب های متحرک */
 
 .heart{
 position:absolute;
-color:red;
+color:#ff3b6a;
+font-size:25px;
 animation:fall linear infinite;
 }
 
 @keyframes fall{
 0%{
 transform:translateY(-100px);
+opacity:0;
+}
+10%{
 opacity:1;
 }
 100%{
@@ -123,23 +91,41 @@ opacity:0;
 }
 }
 
-.sparkle{
-position:absolute;
-width:6px;
-height:6px;
-background:white;
-border-radius:50%;
-animation:blink 2s infinite;
+@keyframes glow{
+from{
+text-shadow:0 0 10px white,
+0 0 20px pink,
+0 0 30px red;
+}
+to{
+text-shadow:0 0 20px white,
+0 0 40px pink,
+0 0 60px red;
+}
 }
 
-@keyframes blink{
-0%,100%{
-opacity:0;
-}
+@keyframes float{
 50%{
-opacity:1;
-box-shadow:0 0 20px white;
+transform:translateY(-10px);
 }
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+audio{
+position:fixed;
+bottom:20px;
+left:20px;
+z-index:999;
 }
 
 </style>
@@ -147,43 +133,36 @@ box-shadow:0 0 20px white;
 
 <body>
 
-<div class="overlay"></div>
-
-<audio autoplay loop>
+<audio autoplay loop controls>
 <source src="Aref.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
 
-<h1 class="title">❤️ تولدت مبارک ساناز ❤️</h1>
+<h1>❤️ تولدت مبارک ساناز ❤️</h1>
 
-<div class="subtitle">
-زیباترین دختر دنیا
-</div>
+<h2>زیباترین دختر دنیا</h2>
 
-<div class="card">
+<div class="message">
 
-امروز تولد کسیه که<br>
+امروز فقط یک روز معمولی نیست...
 
-یه روزی بخش مهمی از دنیام بود...<br>
+امروز روز تولد کسیه که لبخندش می‌تونه
+قشنگ‌ترین لحظه‌های زندگی رو بسازه.
 
-با همه فاصله‌ها و سکوت‌ها<br>
+<br><br>
 
-براش بهترین‌ها رو آرزو می‌کنم ❤️<br><br>
+ساناز عزیز،
 
-تولدت مبارک ساناز عزیز 🎂✨<br>
+امیدوارم تمام آرزوهای قشنگت
+برآورده بشه و همیشه خوشحال باشی.
 
-امیدوارم همیشه بخندی<br>
-
-و تمام آرزوهای قشنگت برآورده بشه 🌹
+✨🎂❤️✨
 
 </div>
 
-<button class="btn" onclick="document.querySelector('audio').play()">
-🎵 پخش موزیک
-</button>
-
 </div>
+
 <script>
 
 for(let i=0;i<40;i++){
@@ -192,33 +171,17 @@ let heart=document.createElement("div");
 
 heart.className="heart";
 
-heart.innerHTML="❤";
+heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"%";
-
-heart.style.fontSize=(20+Math.random()*40)+"px";
 
 heart.style.animationDuration=
 (5+Math.random()*8)+"s";
 
+heart.style.fontSize=
+(15+Math.random()*35)+"px";
+
 document.body.appendChild(heart);
-
-}
-
-for(let i=0;i<80;i++){
-
-let star=document.createElement("div");
-
-star.className="sparkle";
-
-star.style.left=Math.random()*100+"%";
-
-star.style.top=Math.random()*100+"%";
-
-star.style.animationDelay=
-Math.random()*3+"s";
-
-document.body.appendChild(star);
 
 }
 
