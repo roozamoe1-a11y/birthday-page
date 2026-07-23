@@ -3,185 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تولدت مبارک ساناز ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+<title>❤️ تولدت مبارک ساناز ❤️</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Vazirmatn',sans-serif;
+font-family:tahoma;
 }
 
 body{
-background:linear-gradient(135deg,#ff9ecf,#ffc6e5,#ffd8ee);
-overflow:hidden;
-height:100vh;
+background:linear-gradient(135deg,#ff9ad5,#ffb6e1,#ffd6ec);
+min-height:100vh;
+overflow-x:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:20px;
 }
 
 .container{
+max-width:800px;
+width:100%;
 text-align:center;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+border-radius:30px;
 padding:30px;
-z-index:2;
+box-shadow:0 0 30px rgba(255,255,255,.5);
 }
 
 h1{
 font-size:4rem;
 color:white;
-text-shadow:0 0 20px rgba(255,255,255,.8);
-margin-bottom:15px;
-animation:glow 2s infinite alternate;
+text-shadow:
+0 0 10px #fff,
+0 0 20px #ff69b4,
+0 0 40px #ff1493;
+animation:pulse 2s infinite;
 }
 
 h2{
+margin-top:15px;
 font-size:2rem;
 color:white;
-margin-bottom:25px;
 }
 
 .message{
-max-width:700px;
-background:rgba(255,255,255,.2);
-backdrop-filter:blur(10px);
+margin-top:25px;
+background:rgba(255,255,255,.15);
 padding:25px;
-border-radius:25px;
+border-radius:20px;
 color:white;
-font-size:1.3rem;
 line-height:2;
-box-shadow:0 0 30px rgba(255,255,255,.3);
+font-size:1.2rem;
 }
 
-.btn{
-margin-top:30px;
-padding:15px 35px;
-font-size:1.1rem;
+button{
+margin-top:25px;
+background:#ff1493;
 border:none;
-border-radius:50px;
-background:white;
-color:#ff4f9a;
-font-weight:bold;
+padding:15px 35px;
+border-radius:40px;
+color:white;
+font-size:20px;
 cursor:pointer;
-transition:.3s;
+box-shadow:0 0 20px rgba(255,20,147,.5);
 }
 
-.btn:hover{
-transform:scale(1.1);
-}
-
-.heart{
-position:absolute;
-color:#fff;
-font-size:25px;
-animation:float linear infinite;
-opacity:.8;
-}
-
-@keyframes float{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-10%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
-
-@keyframes glow{
-from{
-text-shadow:0 0 10px white;
-}
-to{
-text-shadow:0 0 30px white,0 0 60px pink;
-}
-}
-
-.cake{
-font-size:90px;
-margin-bottom:20px;
-animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-50%{
-transform:translateY(-15px);
-}
+button:hover{
+transform:scale(1.05);
 }
 
 #surprise{
 display:none;
 margin-top:25px;
-font-size:1.5rem;
+font-size:2rem;
 color:white;
 font-weight:bold;
+animation:pulse 1.5s infinite;
+}
+
+.heart{
+position:fixed;
+font-size:25px;
+animation:float linear infinite;
+opacity:.4;
+pointer-events:none;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-150px);
+}
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.08);
+}
 }
 </style>
 </head>
-    
+
 <body>
-  
+
 <audio autoplay loop controls>
 <source src="Aref.mp3" type="audio/mpeg">
 </audio>
-  
+
 <div class="container">
 
-<div class="cake">🎂</div>
-
-<h1>تولدت مبارک ساناز ❤️</h1>
+<h1>❤️ تولدت مبارک ساناز ❤️</h1>
 
 <h2>زیباترین دختر دنیا</h2>
 
 <div class="message">
+
 امروز فقط یک روز معمولی نیست...
+
 امروز روز تولد کسیه که لبخندش می‌تونه
 قشنگ‌ترین لحظه‌های زندگی رو بسازه.
 
-ساناز عزیز،
-امیدوارم تمام آرزوهای قشنگت برآورده بشه
-و همیشه خوشحال، موفق و دوست‌داشتنی بمونی.
+<br><br>
 
-تولدت مبارک 🌹💕
+ساناز عزیز ❤️
+
+<br><br>
+
+امیدوارم تمام آرزوهای قشنگت
+برآورده بشه و همیشه
+سلامت، موفق، خوشحال و پرانرژی باشی.
+
+<br><br>
+
+تولدت مبارک عشقم 🎂✨
+
 </div>
 
-<button class="btn" onclick="showMessage()">
-کلیک کن ❤️
-</button>
+<button onclick="showSurprise()">🎁 باز کردن سورپرایز</button>
 
 <div id="surprise">
-دوستت دارم ساناز 🌹💖
+❤️ دوستت دارم ساناز ❤️
 </div>
 
 </div>
 
 <script>
 
-function showMessage(){
+function showSurprise(){
 document.getElementById("surprise").style.display="block";
 }
 
-for(let i=0;i<60;i++){
+for(let i=0;i<50;i++){
 
 let heart=document.createElement("div");
 
 heart.className="heart";
-heart.innerHTML="❤";
 
-heart.style.left=Math.random()*100+"vw";
+heart.innerHTML="❤️";
 
-heart.style.fontSize=(15+Math.random()*35)+"px";
+heart.style.left=Math.random()*100+"%";
 
-heart.style.animationDuration=(5+Math.random()*10)+"s";
+heart.style.animationDuration=
+(5+Math.random()*10)+"s";
+
+heart.style.fontSize=
+(20+Math.random()*30)+"px";
 
 document.body.appendChild(heart);
+
 }
 
 </script>
